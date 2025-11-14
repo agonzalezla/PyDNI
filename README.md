@@ -116,6 +116,29 @@ Luego, desde la raíz del proyecto:
  python -m pytest tests -v
  ```
 
+Ejemplo de salida:
+```bash
+tests/test_cif.py::test_cif_valido_telefonica PASSED                                                             [  5%]
+tests/test_cif.py::test_cif_valido_ayuntamiento_madrid PASSED                                                    [ 11%]
+tests/test_cif.py::test_cif_invalido PASSED                                                                      [ 17%]
+tests/test_dni.py::test_dni_valido PASSED                                                                        [ 23%]
+tests/test_dni.py::test_dni_invalido_letra PASSED                                                                [ 29%]
+tests/test_dni.py::test_dni_invalido_formato PASSED                                                              [ 35%]
+tests/test_nie.py::test_nie_valido PASSED                                                                        [ 41%]
+tests/test_nie.py::test_nie_invalido_letra_control PASSED                                                        [ 47%]
+tests/test_nie.py::test_nie_invalido_formato PASSED                                                              [ 52%]
+tests/test_nif.py::test_nif_dni_valido PASSED                                                                    [ 58%]
+tests/test_nif.py::test_nif_nie_valido PASSED                                                                    [ 64%]
+tests/test_nif.py::test_nif_cif_valido PASSED                                                                    [ 70%]
+tests/test_nif.py::test_nif_invalido PASSED                                                                      [ 76%]
+tests/test_utils.py::test_identificador_dni PASSED                                                               [ 82%]
+tests/test_utils.py::test_identificador_nie PASSED                                                               [ 88%]
+tests/test_utils.py::test_identificador_cif PASSED                                                               [ 94%]
+tests/test_utils.py::test_identificador_formato_invalido PASSED                                                  [100%]
+
+================================================= 17 passed in 0.05s ==================================================
+```
+
 ## Autor
 
 **Alberto Gonzalez**  

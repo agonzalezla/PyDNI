@@ -1,3 +1,4 @@
+![Estado](https://img.shields.io/badge/Estado-En%20desarrollo-blue)
 # PyDNI
 
 Es un módulo educativo de Python que permite validar DNIs y CIFs españoles de forma sencilla y rápida.  
@@ -59,6 +60,8 @@ PyDNI/
 │   ├── __init__.py
 │   ├── dni.py
 │   ├── cif.py
+│   ├── nie.py       
+│   ├── nif.py        
 │   └── utils.py
 ├── setup.py
 ├── test.py
@@ -91,9 +94,6 @@ Auto (CIF): CIF válido
 
 
 ## Próximas mejoras
-
-- Soporte para NIE (Número de Identificación de Extranjeros)
-- Validación de NIF genérico (personas jurídicas y extranjeras)
 - Pruebas unitarias automáticas (pytest)
 
 ## Autor

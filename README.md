@@ -56,16 +56,28 @@ https://pypi.org/project/PyDNI/
 
 ```
 PyDNI/
-├── PyDNI/
+├── .gitignore
+├── CHANGELOG.md
+├── LICENSE
+├── README.md
+├── setup.py
+├── test.py
+├── PyDNI/               
 │   ├── __init__.py
 │   ├── dni.py
 │   ├── cif.py
-│   ├── nie.py       
-│   ├── nif.py        
+│   ├── nie.py
+│   ├── nif.py
 │   └── utils.py
-├── setup.py
-├── test.py
-└── CHANGELOG.md
+│
+├── tests/                 
+│   ├── test_dni.py
+│   ├── test_nie.py
+│   ├── test_cif.py
+│   ├── test_nif.py
+│   └── test_utils.py
+│
+└── tools/
 ```
 
 
@@ -91,10 +103,18 @@ CIF A58818501: True
 Auto (DNI): DNI válido
 Auto (CIF): CIF válido
 ```
+## Tests unitarios
 
+Este proyecto incluye tests unitarios con pytest.  
+Para ejecutarlos, asegúrate de tener instalado `pytest`:
 
-## Próximas mejoras
-- Pruebas unitarias automáticas (pytest)
+```bash
+pip install pytest
+```
+Luego, desde la raíz del proyecto:
+```bash
+ python -m pytest tests -v
+ ```
 
 ## Autor
 

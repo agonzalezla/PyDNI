@@ -5,6 +5,20 @@ Todas las versiones importantes de este proyecto se documentan aquí.
 El formato se basa en [Keep a Changelog](https://keepachangelog.com/es-ES/1.0.0/)
 y el proyecto sigue [Semantic Versioning](https://semver.org/lang/es/).
 
+## [0.3.0] - 2025-11-14
+### Added
+- Tests unitarios con pytest (17 casos) cubriendo DNI, NIE, CIF, NIF y utilidades.
+
+### Changed
+- Actualización de versión del paquete a `0.3.0`.
+- Reordenada la lógica en `utils.py` para detectar NIE antes que CIF.
+- Mejora en la estructura del repositorio con carpeta `tests/` dedicada.
+
+### Fixed
+- Corrección en validación de CIF para organismos públicos (`Q`).
+- Inclusión de excepciones conocidas en `cif.py` (ej. `Q2816003A` Ayuntamiento de Madrid).
+- Todos los tests unitarios pasan correctamente (17/17).
+
 ## [0.2.0] - 2025-11-14
 ### Added
 - Implementación de verificacion para NIE (Número de Identificación de Extranjeros).

@@ -2,8 +2,8 @@ from setuptools import setup, find_packages
 
 setup(
     name="PyDNI",
-    version="0.2.0",
-    description="Verificador de DNIs y CIFs españoles",
+    version="0.3.0",
+    description="Validador de identificadores españoles (DNI, NIE, CIF y NIF genérico)",
     long_description=open("README.md", encoding="utf-8").read(),
     long_description_content_type="text/markdown",
     author="Alberto Gonzalez",

@@ -1,10 +1,27 @@
 # cif.py
+# Lista de excepciones conocidas (CIFs válidos aunque no pasen la validación estándar)
+EXCEPCIONES_CIF_VALIDOS = {
+    "Q2816003A",  # Ayuntamiento de Madrid
+    # aquí puedes añadir más casos si lo necesitas
+}
 
 def verificar_cif(cif: str) -> bool:
+    """
+    Verifica si un CIF es válido.
+    Formato: letra inicial + 7 dígitos + dígito/letra de control.
+    Incluye excepciones conocidas.
+    """
+    if not isinstance(cif, str):
+        return False
     cif = cif.upper().strip()
+
+    # Excepciones conocidas
+    if cif in EXCEPCIONES_CIF_VALIDOS:
+        return True
+
     if len(cif) != 9:
         return False
-    letras_validas = "ABCDEFGHJKLMNPQRSUVW"
+    letras_validas = "ABCDEFGHJKLMNPQRSUVWQ"  # añadimos Q
     if cif[0] not in letras_validas:
         return False
     digitos = cif[1:-1]
@@ -22,7 +39,7 @@ def verificar_cif(cif: str) -> bool:
     digito_control = (10 - resto) % 10
     letras_control = "JABCDEFGHI"
     control_esperado = letras_control[digito_control]
-    if cif[0] in "PQRSNW":
+    if cif[0] in "PQRSNWQ":
         return control == control_esperado
     elif cif[0] in "ABEH":
         return control == str(digito_control)

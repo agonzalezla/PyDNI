@@ -44,6 +44,12 @@ print(verificar_identificador("12345678Z"))   # "DNI válido"
 print(verificar_identificador("A58818501"))   # "CIF válido"
 ```
 
+## Instalacion con pip desde PyPI
+```bash
+pip install PyDNI
+```
+
+https://pypi.org/project/PyDNI/
 
 ## Estructura del paquete
 
@@ -89,7 +95,6 @@ Auto (CIF): CIF válido
 - Soporte para NIE (Número de Identificación de Extranjeros)
 - Validación de NIF genérico (personas jurídicas y extranjeras)
 - Pruebas unitarias automáticas (pytest)
-- Publicación oficial en PyPI
 
 ## Autor
 

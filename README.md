@@ -56,28 +56,30 @@ https://pypi.org/project/PyDNI/
 
 ```
 PyDNI/
-├── .gitignore
-├── CHANGELOG.md
-├── LICENSE
-├── README.md
-├── setup.py
-├── test.py
-├── PyDNI/               
-│   ├── __init__.py
-│   ├── dni.py
-│   ├── cif.py
-│   ├── nie.py
-│   ├── nif.py
-│   └── utils.py
+├── .gitignore              # Archivos y carpetas que Git debe ignorar (ej. entornos, builds, cache)
+├── CHANGELOG.md            # Registro de cambios por versión (historial de mejoras, fixes, nuevas features)
+├── LICENSE                 # Licencia del proyecto (MIT)
+├── README.md               # Documentación principal: descripción, instalación, uso y ejemplos
+├── setup.py                # Script de configuración para instalar el paquete (PyPI)
+├── test.py                 # Script rápido/manual para probar funciones básicas del paquete
 │
-├── tests/                 
-│   ├── test_dni.py
-│   ├── test_nie.py
-│   ├── test_cif.py
-│   ├── test_nif.py
-│   └── test_utils.py
+├── PyDNI/                  # Carpeta principal del paquete (código fuente)
+│   ├── __init__.py         # Inicializa el paquete y expone funciones principales
+│   ├── dni.py              # Lógica de validación de DNI
+│   ├── cif.py              # Lógica de validación de CIF
+│   ├── nie.py              # Lógica de validación de NIE
+│   ├── nif.py              # Lógica de validación de NIF
+│   └── utils.py            # Funciones auxiliares
 │
-└── tools/
+├── tests/                  # Carpeta con tests unitarios usando pytest
+│   ├── test_dni.py         # Tests para verificar la función de DNI
+│   ├── test_nie.py         # Tests para verificar la función de NIE
+│   ├── test_cif.py         # Tests para verificar la función de CIF
+│   ├── test_nif.py         # Tests para verificar la función de NIF genérico
+│   └── test_utils.py       # Tests para verificar la función unificada de utils
+│
+└── tools/                  # Scripts auxiliares (ej. automatización, publicación, CI/CD, utilidades)
+
 ```
 
 

@@ -5,6 +5,12 @@ Todas las versiones importantes de este proyecto se documentan aquí.
 El formato se basa en [Keep a Changelog](https://keepachangelog.com/es-ES/1.0.0/)
 y el proyecto sigue [Semantic Versioning](https://semver.org/lang/es/).
 
+## [0.4.0] - 2025-11-14
+### Added
+- Nueva clase `Generator` para crear números válidos de DNI, NIE y CIF con fines de prueba.
+- Soporte para generación masiva sin documentos duplicados.
+- Agregados los tests con pytest para el generador.
+
 ## [0.3.0] - 2025-11-14
 ### Added
 - Tests unitarios con pytest (17 casos) cubriendo DNI, NIE, CIF, NIF y utilidades.

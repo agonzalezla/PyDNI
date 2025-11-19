@@ -5,6 +5,11 @@ Todas las versiones importantes de este proyecto se documentan aquí.
 El formato se basa en [Keep a Changelog](https://keepachangelog.com/es-ES/1.0.0/)
 y el proyecto sigue [Semantic Versioning](https://semver.org/lang/es/).
 
+## [0.5.1] - 2025-11-14
+### Fixed
+- Corrección de los tests unitarios para soportar nombres compuestos (ej. “Ana María”, “María del Carmen”).
+- Actualización del script de tests rápidos para incluir generación de nombres y personas completas.
+
 ## [0.5.0] - 2025-11-19
 ### Added
 - Nueva función `generar_nombre()` dentro de la clase `Generator`, capaz de:

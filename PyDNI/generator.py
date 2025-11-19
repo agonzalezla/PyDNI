@@ -9,7 +9,11 @@ LETRAS_CIF = "ABCDEFGHJKLMNPQRSUVW"
 
 
 class Generator:
-    """Generador de DNIs, NIEs, CIFs y NIF para pruebas."""
+    """Generador de DNIs, NIEs, CIFs, NIF y nombres para pruebas."""
+
+    NOMBRES_MASCULINOS = ['ANTONIO', 'MANUEL', 'JOSE', 'FRANCISCO', 'DAVID', 'JAVIER', 'DANIEL', 'JUAN', 'JOSE ANTONIO', 'FRANCISCO JAVIER', 'JOSE LUIS', 'CARLOS', 'ALEJANDRO', 'JESUS', 'JOSE MANUEL', 'MIGUEL', 'MIGUEL ANGEL', 'PABLO', 'RAFAEL', 'SERGIO', 'ANGEL', 'PEDRO', 'JORGE', 'FERNANDO', 'JOSE MARIA', 'ALBERTO', 'LUIS', 'ALVARO', 'ADRIAN', 'JUAN CARLOS', 'DIEGO', 'JUAN JOSE', 'RAUL', 'IVAN', 'RUBEN', 'JUAN ANTONIO', 'OSCAR', 'ENRIQUE', 'JUAN MANUEL', 'MARIO', 'SANTIAGO', 'ANDRES', 'RAMON', 'VICTOR', 'VICENTE', 'JOAQUIN', 'EDUARDO', 'HUGO', 'MARCOS', 'ROBERTO', 'JAIME', 'FRANCISCO JOSE', 'IGNACIO', 'JORDI', 'MOHAMED', 'ALFONSO', 'RICARDO', 'MARTIN', 'MARC', 'SALVADOR', 'GABRIEL', 'GUILLERMO', 'GONZALO', 'EMILIO', 'JOSE MIGUEL', 'NICOLAS', 'LUCAS', 'JULIO', 'JULIAN', 'TOMAS', 'SAMUEL', 'AGUSTIN', 'ISMAEL', 'CRISTIAN', 'JOSE RAMON', 'JOAN', 'AITOR', 'HECTOR', 'ALEX', 'MATEO', 'FELIX', 'IKER', 'JUAN FRANCISCO', 'JOSE CARLOS', 'SEBASTIAN', 'RODRIGO', 'CESAR', 'JOSEP', 'JOSE ANGEL', 'ALFREDO', 'VICTOR MANUEL', 'MARIANO', 'JOSE IGNACIO', 'DOMINGO', 'FELIPE', 'LUIS MIGUEL', 'PAU', 'MOHAMMED', 'IZAN', 'XAVIER', 'JOSE', 'ANTONIO', 'JUAN', 'MANUEL', 'FRANCISCO', 'LUIS', 'JAVIER', 'MIGUEL', 'CARLOS', 'ANGEL', 'JESUS', 'DAVID', 'DANIEL', 'ALEJANDRO', 'PEDRO', 'ALBERTO', 'PABLO', 'MARIA', 'FERNANDO', 'RAFAEL', 'JORGE', 'RAMON', 'SERGIO', 'ANDRES', 'DIEGO', 'ENRIQUE', 'ADRIAN', 'VICTOR', 'ALVARO', 'VICENTE', 'IGNACIO', 'RAUL', 'EDUARDO', 'IVAN', 'OSCAR', 'RUBEN', 'SANTIAGO', 'JOAQUIN', 'MARIO', 'GABRIEL', 'ROBERTO', 'MARCOS', 'ALFONSO', 'JAIME', 'HUGO', 'RICARDO', 'MARTIN', 'JULIO', 'MOHAMED', 'EMILIO', 'GUILLERMO', 'NICOLAS', 'SALVADOR', 'TOMAS', 'GONZALO', 'JULIAN', 'JORDI', 'CRISTIAN', 'CESAR', 'MARC', 'AGUSTIN', 'SEBASTIAN', 'LUCAS', 'SAMUEL', 'FELIX', 'JOAN', 'JOSEP', 'HECTOR', 'FELIPE', 'ISMAEL', 'ALFREDO', 'ALEXANDER', 'MATEO', 'ALEX', 'DOMINGO', 'RODRIGO', 'AITOR', 'IKER', 'MARIANO', 'MARCO', 'ESTEBAN', 'XAVIER', 'ARTURO', 'DARIO', 'JOEL', 'GREGORIO', 'AARON', 'LORENZO', 'MOHAMMED', 'ISAAC', 'BORJA', 'ALBERT', 'ERIC', 'JONATHAN', 'OMAR', 'CHRISTIAN', 'BRUNO', 'PAU', 'IZAN', 'CRISTOBAL']
+    NOMBRES_FEMENINOS = ['MARIA CARMEN', 'MARIA', 'CARMEN', 'ANA MARIA', 'LAURA', 'MARIA PILAR', 'MARIA DOLORES', 'ISABEL', 'ANA', 'MARIA TERESA', 'JOSEFA', 'MARTA', 'CRISTINA', 'LUCIA', 'MARIA ANGELES', 'MARIA JOSE', 'MARIA ISABEL', 'FRANCISCA', 'ANTONIA', 'SARA', 'PAULA', 'DOLORES', 'ELENA', 'MARIA LUISA', 'RAQUEL', 'ROSA MARIA', 'MANUELA', 'MARIA JESUS', 'JULIA', 'PILAR', 'CONCEPCION', 'ALBA', 'MERCEDES', 'BEATRIZ', 'SILVIA', 'NURIA', 'IRENE', 'PATRICIA', 'ROCIO', 'ANDREA', 'ROSARIO', 'MONTSERRAT', 'JUANA', 'MONICA', 'TERESA', 'ENCARNACION', 'ALICIA', 'MARIA MAR', 'MARINA', 'SANDRA', 'SONIA', 'NATALIA', 'SOFIA', 'SUSANA', 'ANGELA', 'YOLANDA', 'CLAUDIA', 'ROSA', 'CARLA', 'EVA', 'MARGARITA', 'MARIA JOSEFA', 'INMACULADA', 'ANA ISABEL', 'MARIA MERCEDES', 'MARIA ROSARIO', 'NOELIA', 'DANIELA', 'ESTHER', 'VERONICA', 'CAROLINA', 'MARTINA', 'NEREA', 'INES', 'MIRIAM', 'EVA MARIA', 'MARIA VICTORIA', 'LORENA', 'MARIA ELENA', 'ANA BELEN', 'VICTORIA', 'MARIA ROSA', 'ALEJANDRA', 'ANGELES', 'MARIA CONCEPCION', 'CELIA', 'LIDIA', 'FATIMA', 'MARIA ANTONIA', 'AMPARO', 'AINHOA', 'OLGA', 'CATALINA', 'MARIA NIEVES', 'CLARA', 'ADRIANA', 'VALERIA', 'ANNA', 'MARIA CRISTINA', 'EMMA', 'MARIA', 'CARMEN', 'ANA', 'ISABEL', 'DOLORES', 'PILAR', 'TERESA', 'ROSA', 'JOSEFA', 'CRISTINA', 'LAURA', 'ANGELES', 'ELENA', 'LUCIA', 'ANTONIA', 'MARTA', 'FRANCISCA', 'MERCEDES', 'LUISA', 'PAULA', 'JOSE', 'ROSARIO', 'CONCEPCION', 'SARA', 'RAQUEL', 'PATRICIA', 'ROCIO', 'EVA', 'BEATRIZ', 'ANDREA', 'VICTORIA', 'JULIA', 'MANUELA', 'JESUS', 'JUANA', 'BELEN', 'ALBA', 'SILVIA', 'ESTHER', 'SOFIA', 'IRENE', 'NURIA', 'SANDRA', 'ANGELA', 'MONICA', 'MONTSERRAT', 'ENCARNACION', 'ALICIA', 'MARINA', 'INMACULADA', 'MAR', 'SONIA', 'YOLANDA', 'CLAUDIA', 'NATALIA', 'CAROLINA', 'SUSANA', 'MARGARITA', 'ALEJANDRA', 'DANIELA', 'INES', 'CARLA', 'VERONICA', 'GLORIA', 'LUZ', 'LOURDES', 'AMPARO', 'LORENA', 'FATIMA', 'NIEVES', 'SOLEDAD', 'NOELIA', 'BEGOÑA', 'BLANCA', 'OLGA', 'MARTINA', 'MIRIAM', 'NEREA', 'CLARA', 'ADRIANA', 'MILAGROS', 'LIDIA', 'ESPERANZA', 'ANNA', 'CONSUELO', 'ASUNCION', 'CATALINA', 'CELIA', 'VALENTINA', 'VALERIA', 'DIANA', 'AURORA', 'GABRIELA', 'MAGDALENA', 'ALEXANDRA', 'ELIZABETH', 'VANESA', 'ELISA', 'AINHOA', 'EMILIA']
+    APELLIDOS = ['GARCIA', 'RODRIGUEZ', 'GONZALEZ', 'FERNANDEZ', 'LOPEZ', 'MARTINEZ', 'SANCHEZ', 'PEREZ', 'GOMEZ', 'MARTIN', 'JIMENEZ', 'HERNANDEZ', 'RUIZ', 'DIAZ', 'MORENO', 'MUÑOZ', 'ALVAREZ', 'ROMERO', 'GUTIERREZ', 'ALONSO', 'TORRES', 'NAVARRO', 'DOMINGUEZ', 'RAMIREZ', 'RAMOS', 'VAZQUEZ', 'GIL', 'SERRANO', 'MORALES', 'MOLINA', 'SUAREZ', 'CASTRO', 'BLANCO', 'DELGADO', 'ORTEGA', 'ORTIZ', 'MARIN', 'RUBIO', 'MEDINA', 'NUÑEZ', 'CASTILLO', 'SANZ', 'CORTES', 'IGLESIAS', 'SANTOS', 'GARRIDO', 'GUERRERO', 'LOZANO', 'FLORES', 'CANO', 'CRUZ', 'MENDEZ', 'HERRERA', 'PEÑA', 'PRIETO', 'LEON', 'CABRERA', 'MARQUEZ', 'REYES', 'GALLEGO', 'VIDAL', 'CALVO', 'CAMPOS', 'VEGA', 'FUENTES', 'AGUILAR', 'CARRASCO', 'VARGAS', 'CABALLERO', 'DIEZ', 'NIETO', 'SANTANA', 'GIMENEZ', 'HIDALGO', 'MONTERO', 'ROJAS', 'BENITEZ', 'PASCUAL', 'HERRERO', 'ARIAS', 'SANTIAGO', 'LORENZO', 'DURAN', 'MORA', 'IBAÑEZ', 'FERRER', 'CARMONA', 'VICENTE', 'SOTO', 'ROMAN', 'CRESPO', 'RIVERA', 'PARRA', 'SILVA', 'VELASCO', 'PASTOR', 'BRAVO', 'SAEZ', 'MOYA', 'MENDOZA']
 
     def generar_dni(self) -> str:
         numero = random.randint(0, 99999999)
@@ -76,3 +80,78 @@ class Generator:
             generados.add(doc)
 
         return list(generados)
+    
+    def generar_nombre(self, sexo: str | None = None) -> str:
+        sexo = sexo.lower() if sexo else "aleatorio"
+
+        if sexo == "aleatorio":
+            sexo = random.choice(["masculino", "femenino"])
+
+        if sexo not in ["masculino", "femenino"]:
+            raise ValueError("El sexo debe ser 'masculino', 'femenino' o 'aleatorio'")
+
+        if sexo == "masculino":
+            nombre = random.choice(self.NOMBRES_MASCULINOS)
+        else:
+            nombre = random.choice(self.NOMBRES_FEMENINOS)
+
+        apellido1, apellido2 = random.sample(self.APELLIDOS, 2)
+
+        return f"{nombre} {apellido1} {apellido2}"
+
+    
+    def generar_persona(self, sexo: str | None = None, tipo_doc: str | None = None) -> dict:
+        """
+        Genera una persona "mock" con datos válidos:
+        - Nombre completo
+        - Sexo (masculino, femenino o aleatorio)
+        - Documento (DNI, NIE, CIF o aleatorio)
+        - Tipo de documento usado
+
+        Retorna un diccionario como:
+        {
+            "nombre": "Carlos García López",
+            "sexo": "masculino",
+            "tipo_documento": "DNI",
+            "documento": "12345678Z"
+        }
+        """
+
+
+        # Determinar sexo
+        if sexo is None or sexo.lower() == "aleatorio":
+            sexo = random.choice(["masculino", "femenino"])
+        else:
+            sexo = sexo.lower()
+            if sexo not in ["masculino", "femenino"]:
+                raise ValueError("El sexo debe ser 'masculino', 'femenino' o 'aleatorio'")
+
+
+        # Determinar tipo documento
+        if tipo_doc is None or tipo_doc.lower() == "auto" or tipo_doc.lower() == "aleatorio":
+            tipo_doc = random.choice(["DNI", "NIE", "CIF"])
+        else:
+            tipo_doc = tipo_doc.upper()
+            if tipo_doc not in ["DNI", "NIE", "CIF"]:
+                raise ValueError("tipo_doc debe ser 'DNI', 'NIE', 'CIF' o 'aleatorio'")
+
+        # Generar documento
+        if tipo_doc == "DNI":
+            doc = self.generar_dni()
+        elif tipo_doc == "NIE":
+            doc = self.generar_nie()
+        else:
+            doc = self.generar_cif()
+
+
+        # Generar nombre
+        nombre = self.generar_nombre(sexo)
+
+
+        # Resultado
+        return {
+            "nombre": nombre,
+            "sexo": sexo,
+            "tipo_documento": tipo_doc,
+            "documento": doc
+        }

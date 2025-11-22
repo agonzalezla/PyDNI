@@ -4,6 +4,7 @@ from .nie import verificar_nie
 from .nif import verificar_nif
 from .utils import verificar_identificador
 from .generator import Generator
+from .emails import EmailGenerator
 
 __all__ = [
     "verificar_dni",
@@ -12,6 +13,7 @@ __all__ = [
     "verificar_nif",
     "verificar_identificador",
     "Generator",
+    "EmailGenerator",
 ]
 
-__version__ = "0.5.1"
+__version__ = "0.6.0"

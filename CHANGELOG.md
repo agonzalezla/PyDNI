@@ -5,6 +5,23 @@ Todas las versiones importantes de este proyecto se documentan aquí.
 El formato se basa en [Keep a Changelog](https://keepachangelog.com/es-ES/1.0.0/)
 y el proyecto sigue [Semantic Versioning](https://semver.org/lang/es/).
 
+## [0.6.0] - 2025-11-15
+### Added
+- Nuevo módulo `EmailGenerator` para generar direcciones de email:
+  - Emails aleatorios
+  - Emails con dominio personalizado
+  - Emails basados en nombre + primer apellido
+- Integración completa de generación de email en `Generator.generar_persona()`
+- Normalización de acentos y caracteres especiales en correos electrónicos
+- Tests unitarios dedicados para la generacion de emails
+
+### Fixed
+- Corrección en los tests para soportar nombres compuestos y normalización de apellidos
+
+### Improved
+- Mejora de robustez y fiabilidad del generador de personas completas
+
+
 ## [0.5.1] - 2025-11-14
 ### Fixed
 - Corrección de los tests unitarios para soportar nombres compuestos (ej. “Ana María”, “María del Carmen”).

@@ -15,7 +15,6 @@ setup(
     classifiers=[
         "Development Status :: 5 - Production/Stable",
         "Intended Audience :: Developers",
-        "Intended Audience :: Quality Assurance",
         "Intended Audience :: Information Technology",
         "Topic :: Software Development :: Libraries",
         "Topic :: Software Development :: Testing",

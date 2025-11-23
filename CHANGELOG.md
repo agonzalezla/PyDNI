@@ -5,7 +5,32 @@ Todas las versiones importantes de este proyecto se documentan aquí.
 El formato se basa en [Keep a Changelog](https://keepachangelog.com/es-ES/1.0.0/)
 y el proyecto sigue [Semantic Versioning](https://semver.org/lang/es/).
 
-## [0.6.0] - 2025-11-15
+## [0.7.2] - 2025-11-23
+### Fixed
+- Corrección de los tests de correo electrónico para que utilicen la misma normalización
+  de apellidos que emplea `EmailGenerator` mediante su método `_limpiar()`.  
+- Se solucionan fallos al validar emails generados a partir de nombres con acentos como
+  “Peña”, “Ibáñez”, “Muñoz”, etc., que provocaban inconsistencias entre el valor esperado
+  y el email real generado.
+
+## [0.7.1] - 2025-11-23
+### Fixed
+- Se corrige el parámetro `tipo_doc="aleatorio"` en `generar_persona()` que anteriormente
+  provocaba un `ValueError`. Ahora se trata igual que `AUTO` o `None`, seleccionando un 
+  documento al azar (DNI, NIE o CIF), alineando el comportamiento con los tests y con el 
+  uso de los demás parámetros de tipo “aleatorio”.
+
+## [0.7.0] - 2025-11-23
+### Added
+- Nueva clase `BirthDateGenerator` para generar fechas de nacimiento:
+  - Personas menores (<18 años)
+  - Personas mayores (≥18 años)
+  - Fechas aleatorias sin restricciones
+  - Rangos personalizados de edad
+- Integración completa de fechas de nacimiento en `Generator.generar_persona()`.
+- Tests unitarios dedicados para la generacion de fechas nacimiento
+
+## [0.6.0] - 2025-11-22
 ### Added
 - Nuevo módulo `EmailGenerator` para generar direcciones de email:
   - Emails aleatorios
@@ -21,8 +46,7 @@ y el proyecto sigue [Semantic Versioning](https://semver.org/lang/es/).
 ### Improved
 - Mejora de robustez y fiabilidad del generador de personas completas
 
-
-## [0.5.1] - 2025-11-14
+## [0.5.1] - 2025-11-19
 ### Fixed
 - Corrección de los tests unitarios para soportar nombres compuestos (ej. “Ana María”, “María del Carmen”).
 - Actualización del script de tests rápidos para incluir generación de nombres y personas completas.

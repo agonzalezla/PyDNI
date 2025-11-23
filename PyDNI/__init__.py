@@ -5,6 +5,7 @@ from .nif import verificar_nif
 from .utils import verificar_identificador
 from .generator import Generator
 from .emails import EmailGenerator
+from .birthdates import BirthDateGenerator
 
 __all__ = [
     "verificar_dni",
@@ -14,6 +15,7 @@ __all__ = [
     "verificar_identificador",
     "Generator",
     "EmailGenerator",
+    "BirthDateGenerator",
 ]
 
-__version__ = "0.6.0"
+__version__ = "0.7.2"

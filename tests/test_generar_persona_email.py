@@ -29,7 +29,9 @@ def test_email_persona_coincide_con_nombre():
 
     partes = nombre.split()
     inicial = partes[0][0].lower()
-    apellido = partes[-2].lower()
+
+    eg = EmailGenerator()
+    apellido = eg._limpiar(partes[-2])  # ← limpieza necesaria
 
     assert email.startswith(inicial + apellido)
 

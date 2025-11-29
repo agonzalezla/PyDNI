@@ -6,6 +6,7 @@ from .utils import verificar_identificador
 from .generator import Generator
 from .emails import EmailGenerator
 from .birthdates import BirthDateGenerator
+from .phone import PhoneGenerator
 
 __all__ = [
     "verificar_dni",
@@ -16,6 +17,7 @@ __all__ = [
     "Generator",
     "EmailGenerator",
     "BirthDateGenerator",
+    "PhoneGenerator",
 ]
 
-__version__ = "0.7.2"
+__version__ = "0.8.0"

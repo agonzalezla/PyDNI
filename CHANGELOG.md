@@ -5,6 +5,11 @@ Todas las versiones importantes de este proyecto se documentan aquí.
 El formato se basa en [Keep a Changelog](https://keepachangelog.com/es-ES/1.0.0/)
 y el proyecto sigue [Semantic Versioning](https://semver.org/lang/es/).
 
+## [0.8.0] - 2025-11-29
+### Added
+- Generación de números de teléfono móviles y fijos válidos en España.
+- Tests unitarios dedicados para la generacion de numeros de telefono
+
 ## [0.7.2] - 2025-11-23
 ### Fixed
 - Corrección de los tests de correo electrónico para que utilicen la misma normalización

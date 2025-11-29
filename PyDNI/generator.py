@@ -5,6 +5,7 @@ from .dni import verificar_dni
 from .cif import verificar_cif
 from .emails import EmailGenerator
 from .birthdates import BirthDateGenerator
+from .phone import PhoneGenerator
 
 
 LETRAS_DNI = "TRWAGMYFPDXBNJZSQVHLCKE"
@@ -21,6 +22,7 @@ class Generator:
     def __init__(self):
         self.email_gen = EmailGenerator()
         self.birth_gen = BirthDateGenerator()
+        self.phone_gen = PhoneGenerator()
 
     def generar_dni(self) -> str:
         numero = random.randint(0, 99999999)
@@ -158,6 +160,10 @@ class Generator:
         # Fecha de nacimiento
         fecha_nacimiento = self.birth_gen.generar(edad)
 
+        # Telefono
+        telefono = self.phone_gen.generar_telefono()
+
+
         return {
             "nombre": nombre,
             "sexo": sexo_resuelto,
@@ -165,5 +171,6 @@ class Generator:
             "documento": documento,
             "email": email,
             "fecha_nacimiento": fecha_nacimiento.isoformat(),
+            "telefono": telefono,
         }
 

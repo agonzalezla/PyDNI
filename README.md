@@ -2,9 +2,7 @@
 # PyDNI
 
 PyDNI es un módulo de Python que permite validar y generar identificadores españoles:
-DNI, NIE, CIF y NIF, así como generar personas ficticias válidas para uso en desarrollo y pruebas.
-
-Incluye validación, generación aleatoria y un motor de pruebas completo con pytest.
+DNI, NIE, CIF y NIF, así como generar personas ficticias válidas para uso en desarrollo, qa y pruebas. Incluye validación, generación aleatoria y un motor de pruebas completo con pytest.
 
 
 ## Características principales
@@ -18,10 +16,12 @@ Incluye validación, generación aleatoria y un motor de pruebas completo con py
 
 ### Generación
 A través de la clase `Generator`:
-- Generación de DNI válidos
-- Generación de NIE válidos
-- Generación de CIF válidos
+- Generación de DNI
+- Generación de NIE
+- Generación de CIF
 - Generación de lotes (`generar_varios()`) sin duplicados
+- Generador numeros de telefono movil y fijo
+- Generador emails
 - Generación de nombres completos:
   - masculino, femenino o aleatorio
   - compatible con nombres compuestos
@@ -30,6 +30,8 @@ A través de la clase `Generator`:
   - nombre completo
   - tipo de documento
   - número de documento válido
+  - email
+  - telefono
 
 ### Estructura modular
 Código limpio, organizado y fácil de integrar en otros proyectos.
@@ -84,9 +86,33 @@ print("Nombre masculino:", gen.generar_nombre("masculino"))
 print("Nombre femenino:", gen.generar_nombre("femenino"))
 print("Nombre aleatorio:", gen.generar_nombre("aleatorio"))
 
-# Generación de personas completas ---
+# Generacion de emails
+print(gen.email_gen.generar_email_aleatorio())
+print(gen.email_gen.generar_email_aleatorio("midominio.com"))
+print(gen.email_gen.generar_email_nombre("María Ruiz Gómez", "empresa.com"))
+print(gen.email_gen.generar_email("Ana García Fernández"))
+
+# Generacion de telefonos
+print("Teléfono móvil:", gen.phone_gen.generar_movil())
+print("Teléfono fijo:", gen.phone_gen.generar_fijo())
+print("Teléfono automático:", gen.phone_gen.generar_telefono())
+
+# Generación de personas completas
 persona = gen.generar_persona()
 print("Persona completa:", persona)
+
+'''
+ Estructura de ejemplo:
+ {
+     "nombre": "María Ruiz Gómez",
+     "sexo": "femenino",
+     "tipo_documento": "DNI",
+     "documento": "12345678Z",
+     "email": "mruiz@gmail.com",
+     "fecha_nacimiento": "1992-04-18",
+     "telefono": "612345678"
+ }
+'''
 ```
 
 ## Estructura del paquete
@@ -138,45 +164,49 @@ python test.py
 Deberías ver algo como:
 
 ```
-===== TESTS RÁPIDOS DE VALIDACIÓN =====
-
+===== TESTS RÁPIDOS DE VALIDACIÓN ======
 DNI 12345678Z (válido): True
 NIE X1234567L (válido): True
 CIF A58818501 (válido): True
 
 ===== TESTS NIF GENÉRICO =====
-
 verificar_nif('12345678Z') → DNI válido
 verificar_nif('X1234567L') → NIE válido
 verificar_nif('A58818501') → CIF válido
 
 ===== TESTS AUTOMÁTICOS =====
-
 Auto (DNI): DNI válido
 Auto (CIF): CIF válido
 Auto (NIE): NIE válido
 
 ===== TESTS GENERACIÓN =====
-
 Generar DNI: 69487115K
 Generar NIE: X1696965W
 Generar CIF: L1722668I
-
 Generar 10 AUTO: ['06534924A', 'Y2741161N', 'Y5995450P', 'J82715343', '03564494T', '68554386B', 'A74055153', 'Z1300847H', '98083304B', '74821854W']
 
 ===== TESTS GENERACIÓN DE NOMBRES =====
-
 Nombre masculino: MOHAMMED REYES DOMINGUEZ
 Nombre femenino: SARA LOZANO FLORES
 Nombre aleatorio: ENCARNACION MOLINA FERRER
 Nombre sin parámetros: LOURDES MUÑOZ CRESPO
 
 ===== TESTS GENERACIÓN DE PERSONAS =====
+Persona aleatoria: {'nombre': 'SERGIO HERRERO HERRERA', 'sexo': 'masculino', 'tipo_documento': 'NIE', 'documento': 'Y8427772B', 'email': 'sherrero@proton.me', 'fecha_nacimiento': '1952-06-20', 'telefono': '695127455'}
+Persona masculina: {'nombre': 'ESTEBAN NAVARRO ARIAS', 'sexo': 'masculino', 'tipo_documento': 'NIE', 'documento': 'Z1415427N', 'email': 'enavarro@outlook.com', 'fecha_nacimiento': '1933-12-29', 'telefono': '778282359'}
+Persona con DNI: {'nombre': 'BELEN ARIAS SANTIAGO', 'sexo': 'femenino', 'tipo_documento': 'DNI', 'documento': '11766888L', 'email': 'barias@proton.me', 'fecha_nacimiento': '1960-03-22', 'telefono': '708422812'}
+Persona con NIE femenina: {'nombre': 'PAULA SANCHEZ CASTRO', 'sexo': 'femenino', 'tipo_documento': 'NIE', 'documento': 'X7769230Z', 'email': 'psanchez@yahoo.es', 'fecha_nacimiento': '1962-02-11', 'telefono': '985841094'}
 
-Persona aleatoria: {'nombre': 'EMILIA PEÑA GOMEZ', 'sexo': 'femenino', 'tipo_documento': 'DNI', 'documento': '36131092R'}
-Persona masculina: {'nombre': 'FRANCISCO BRAVO NAVARRO', 'sexo': 'masculino', 'tipo_documento': 'CIF', 'documento': 'N4325478H'}
-Persona con DNI: {'nombre': 'MARIA ISABEL PRIETO HERNANDEZ', 'sexo': 'femenino', 'tipo_documento': 'DNI', 'documento': '15742334F'}
-Persona con NIE femenina: {'nombre': 'SOLEDAD PASTOR FUENTES', 'sexo': 'femenino', 'tipo_documento': 'NIE', 'documento': 'X7092186K'}
+===== TESTS GENERACIÓN DE EMAILS =====
+zv88fsjqo1tq@gmail.com
+215z7crn@midominio.com
+mruiz@empresa.com
+agarcia@proton.me
+
+===== TESTS GENERACIÓN DE TELÉFONOS =====
+Teléfono móvil: 749450388
+Teléfono fijo: 948136220
+Teléfono automático: 814960119
 ```
 ## Tests unitarios
 

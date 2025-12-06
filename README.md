@@ -1,37 +1,46 @@
-![Estado](https://img.shields.io/badge/Estado-En%20desarrollo-blue)
+![Status](https://img.shields.io/badge/status-stable-brightgreen)
+![Tests](https://github.com/agonzalezla/PyDNI/actions/workflows/tests.yml/badge.svg)
+![PyPI](https://img.shields.io/pypi/v/pydni)
+![Downloads](https://img.shields.io/pypi/dm/pydni)
+![Python](https://img.shields.io/pypi/pyversions/pydni)
+![License](https://img.shields.io/pypi/l/pydni)
+<!-- ![Coverage](https://codecov.io/gh/agonzalezla/PyDNI/branch/main/graph/badge.svg) -->
+![Status](https://img.shields.io/badge/release-production--ready-blue)
+![Mock Data](https://img.shields.io/badge/type-mock--data-orange)
+![Spain](https://img.shields.io/badge/country-Spain-red)
+![Style](https://img.shields.io/badge/code%20style-PEP8-blue)
+![Security](https://img.shields.io/badge/security-tested-green)
+![SemVer](https://img.shields.io/badge/versioning-semver-blue)
+
 # PyDNI
 
 PyDNI es un módulo de Python que permite validar y generar identificadores españoles:
 DNI, NIE, CIF y NIF, así como generar personas ficticias válidas para uso en desarrollo, qa y pruebas. Incluye validación, generación aleatoria y un motor de pruebas completo con pytest.
 
+## ¿Para qué sirve PyDNI?
 
-## Características principales
+PyDNI está diseñado para facilitar el desarrollo, testing y validación de aplicaciones que trabajan con datos españoles. Es ideal para:
 
-### Validación
-- Verificación de DNI
-- Verificación de NIE
-- Verificación de CIF
-- Verificación de NIF genérico (detecta DNI / NIE / CIF)
-- Función unificada `verificar_identificador()` para auto-detección
+- Tests unitarios y de integración.
+- Generación de datos ficticios (mock data).
+- Entornos de staging y preproducción.
+- Pruebas de validación de formularios.
+- Simulación de usuarios reales en aplicaciones españolas.
+- Automatización de QA.
 
-### Generación
-A través de la clase `Generator`:
-- Generación de DNI
-- Generación de NIE
-- Generación de CIF
-- Generación de lotes (`generar_varios()`) sin duplicados
-- Generador numeros de telefono movil y fijo
-- Generador emails
-- Generación de nombres completos:
-  - masculino, femenino o aleatorio
-  - compatible con nombres compuestos
-  - dos apellidos no repetidos
-- Generación de personas completas:
-  - nombre completo
-  - tipo de documento
-  - número de documento válido
-  - email
-  - telefono
+
+## Generadores disponibles
+
+| Generador | Descripción |
+|----------|-------------|
+| DNI | Genera DNIs válidos |
+| NIE | Genera NIEs válidos |
+| CIF | Genera CIFs válidos |
+| Nombres | Nombres masculinos, femeninos y aleatorios |
+| Emails | Emails realistas basados en nombre |
+| Teléfonos | Móviles y fijos españoles |
+| Fechas | Fechas de nacimiento realistas |
+| Personas | Perfil completo con datos reales |
 
 ### Estructura modular
 Código limpio, organizado y fácil de integrar en otros proyectos.
@@ -54,6 +63,11 @@ from PyDNI import verificar_dni, verificar_cif, verificar_identificador
 ```bash
 pip install PyDNI
 ```
+Instalacion version concreta
+```bash
+pip install pydni==0.8.1
+```
+
 https://pypi.org/project/PyDNI/
 
 ## Uso básico
@@ -284,3 +298,23 @@ agonzalezla@protonmail.com
 
 Este proyecto se distribuye bajo la licencia MIT.  
 Consulta el archivo `LICENSE`
+
+## Contribuciones
+
+¡Las contribuciones son bienvenidas!
+
+1. Haz un fork del proyecto
+2. Crea una rama nueva
+3. Añade tus cambios y tests
+4. Envía un Pull Request
+
+## Soporte
+
+Si encuentras un bug o quieres proponer una mejora, abre un **Issue en GitHub**.
+
+Repositorio:
+https://github.com/agonzalezla/PyDNI
+
+## Aviso legal
+
+Los datos generados por PyDNI son completamente ficticios y se utilizan únicamente con fines de desarrollo, testing y aprendizaje.

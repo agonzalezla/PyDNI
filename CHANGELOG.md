@@ -5,6 +5,14 @@ Todas las versiones importantes de este proyecto se documentan aquí.
 El formato se basa en [Keep a Changelog](https://keepachangelog.com/es-ES/1.0.0/)
 y el proyecto sigue [Semantic Versioning](https://semver.org/lang/es/).
 
+## [0.8.1] - 2025-12-06
+### Added
+- Integración de GitHub Actions para la ejecución automática de tests en cada push y pull request.
+- Ejecución automática de tests mediante CI.
+
+### Improved
+- Medición automática de cobertura de código con `pytest-cov`.
+
 ## [0.8.0] - 2025-11-29
 ### Added
 - Generación de números de teléfono móviles y fijos válidos en España.

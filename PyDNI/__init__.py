@@ -7,6 +7,7 @@ from .generator import Generator
 from .emails import EmailGenerator
 from .birthdates import BirthDateGenerator
 from .phone import PhoneGenerator
+from .faker_provider import PyDNIFakerProvider
 
 __all__ = [
     "verificar_dni",
@@ -18,6 +19,7 @@ __all__ = [
     "EmailGenerator",
     "BirthDateGenerator",
     "PhoneGenerator",
+    "PyDNIFakerProvider",
 ]
 
-__version__ = "0.8.1"
+__version__ = "0.9.0"

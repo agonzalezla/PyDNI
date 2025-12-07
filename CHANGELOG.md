@@ -5,6 +5,18 @@ Todas las versiones importantes de este proyecto se documentan aquí.
 El formato se basa en [Keep a Changelog](https://keepachangelog.com/es-ES/1.0.0/)
 y el proyecto sigue [Semantic Versioning](https://semver.org/lang/es/).
 
+## [0.9.0] - 2025-12-07
+### Added
+- Integración oficial con Faker mediante `PyDNIFakerProvider`.
+- Soporte de generación desde Faker para:
+  - DNI, NIE, CIF y detección automática.
+  - Nombres completos por sexo.
+  - Personas completas con documento, email, teléfono y fecha de nacimiento.
+  - Emails basados en nombre con dominio personalizado.
+  - Teléfonos móviles y fijos.
+  - Fechas de nacimiento (menor, mayor, aleatoria).
+- Añadida batería completa de tests unitarios para el provider de Faker.
+
 ## [0.8.1] - 2025-12-06
 ### Added
 - Integración de GitHub Actions para la ejecución automática de tests en cada push y pull request.

@@ -129,6 +129,26 @@ print("Persona completa:", persona)
 '''
 ```
 
+## Uso desde Faker
+```python
+from faker import Faker
+from PyDNI import PyDNIFakerProvider
+
+fake = Faker("es_ES")
+fake.add_provider(PyDNIFakerProvider)
+
+print(fake.dni())
+print(fake.nie())
+print(fake.cif())
+print(fake.documento())
+
+print(fake.nombre())
+print(fake.telefono())
+
+persona = fake.persona()
+print(persona)
+```
+
 ## Estructura del paquete
 
 ```
